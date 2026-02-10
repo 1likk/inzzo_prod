@@ -117,7 +117,7 @@ img {
     to { width: 100%; }
 }
 
-/* Header */
+
 
 .header {
     position: fixed;
@@ -125,12 +125,13 @@ img {
     left: 0;
     width: 100%;
     padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     z-index: 100;
     background: transparent;
     transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .header.scrolled {
@@ -148,6 +149,9 @@ img {
 .nav {
     display: flex;
     gap: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-link {
@@ -175,11 +179,7 @@ img {
     width: 100%;
 }
 
-.header-phone {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text);
-}
+
 
 
 .vertical-text {
