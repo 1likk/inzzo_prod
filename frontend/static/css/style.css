@@ -1116,6 +1116,9 @@ img {
     display: flex;
     justify-content: space-between;
     font-family: inherit;
+    color: #000000; 
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none; 
     -moz-appearance: none;   
     appearance: none;
