@@ -342,6 +342,7 @@ function updateCartUI() {
                         '<div class="cart-item-name">' + item.name + '</div>' +
                         '<div class="cart-item-variant">' + item.variant + '</div>' +
                         '<div class="cart-item-size">Размер: ' + item.size + '</div>' +
+                        '<div class="cart-item-quantity">Количество: <b>' + item.quantity + ' шт.</b></div>' + 
                         '<div class="cart-item-price">' + item.priceFormatted + '</div>' +
                         '<button class="cart-item-remove" data-index="' + index + '">Удалить</button>' +
                     '</div>' +
@@ -422,6 +423,7 @@ function initOrderForm() {
                 name: item.name,
                 variant: item.variant,
                 size: item.size,
+                quantity: item.quantity,
                 price: item.priceFormatted
             })),
             total: formatPrice(cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)),

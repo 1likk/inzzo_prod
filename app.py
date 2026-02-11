@@ -41,53 +41,60 @@ def send_notification(name, telegram, phone, timestamp, adress, items=None, tota
         print('Бот не настроен')
         return False
     
-    # Format items list
+    # Форматирование списка товаров
     items_text = ""
     if items and len(items) > 0:
-        items_text = "\n<b>Заказ:</b>\n"
+        items_text = "\n<b>📦 Состав заказа:</b>\n"
         for item in items:
-            items_text += f"  - {item.get('name', '')} ({item.get('variant', '')}) | {item.get('size', '')} | {item.get('price', '')}\n"
+            # Извлекаем данные, включая количество (по умолчанию 1)
+            name_prod = item.get('name', '')
+            variant = item.get('variant', '')
+            size = item.get('size', '')
+            price = item.get('price', '')
+            qty = item.get('quantity', 1)
+
+            # Форматируем вариант: если он есть, добавляем в скобках, если нет — пустота
+            variant_str = f" ({variant})" if variant else ""
+            
+            # Добавляем строку с количеством (жирным шрифтом)
+            items_text += f"  • {name_prod}{variant_str} | {size} | <b>{qty} шт.</b> | {price}\n"
+            
         if total:
-            items_text += f"\n<b>Итого:</b> {total}"
+            items_text += f"\n<b>💰 Итого к оплате:</b> {total}"
     
-    message = f"""<b>Новый заказ INZZO</b>
+    # Ссылка на профиль в Telegram для удобства менеджера
+    tg_link = f"https://t.me/{telegram.replace('@', '')}"
+    
+    message = f"""<b>❤️‍🔥 НОВЫЙ ЗАКАЗ INZZO</b>
 
-<b>Имя:</b> {name}
-<b>Телефон:</b> {phone}
-<b>Telegram:</b> {telegram}
-<b>Время:</b> {timestamp}
-<b>Адрес:</b> {adress}
-
+<b>👤 Клиент:</b> {name}
+<b>📞 Телефон:</b> <code>{phone}</code>
+<b>📱 Telegram:</b> {telegram} [<a href="{tg_link}">Написать</a>]
+<b>📍 Адрес:</b> {adress}
+<b>⏰ Время:</b> {timestamp}
 {items_text}
 
 #заказ #inzzo
 """
     
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-
     payload = {
         'chat_id': TELEGRAM_CHAT_ID,
         'text': message,
-        'parse_mode': 'HTML'
+        'parse_mode': 'HTML',
+        'disable_web_page_preview': True  
     }
     
     try:
         response = requests.post(url, json=payload, timeout=10)
-        if response.status_code == 200:
-            print(f"✅ Order notification sent for {name} ({telegram})")
-            return True
-        else:
-            print(f"❌ Telegram API error: {response.status_code}")
-            print(response.text)
-            return False
+        return response.status_code == 200
     except Exception as e:
-        print(f"❌ Error sending order notification: {str(e)}")
+        print(f"❌ Ошибка отправки: {str(e)}")
         return False
-    
 @app.route('/api/submit-order', methods=['POST'])
 def submit_order():
     try:
-        # Get JSON data from request
+       
         data = request.get_json()
         
         if not data:
