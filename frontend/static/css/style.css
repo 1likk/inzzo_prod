@@ -320,7 +320,7 @@ img {
     margin-bottom: 50px;
 }
 
-.catalog .section-title {
+.section-title {
     justify-content: center;
 }
 
@@ -436,11 +436,14 @@ img {
     color: var(--color-text-light);
     line-height: 1.9;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .about-stats {
     display: flex;
     gap: 40px;
+    width: 100%;
+    justify-content: center;
 }
 
 .stat {
