@@ -1256,6 +1256,14 @@ img {
     .product-card-info h3 {
         font-size: 0.75rem;
     }
+
+   .gallery-thumbs {
+        position: sticky;
+        bottom: 0; 
+        z-index: 10;
+        background: white; 
+        padding: 10px 0;
+    }
     
     .floating-cart {
         bottom: 20px;
