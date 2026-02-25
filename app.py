@@ -1,6 +1,6 @@
 #INZZO landing page backend 
 
-from flask import Flask, request, jsonify, send_from_directory, render_template
+from flask import Flask, request, jsonify, send_from_directory, render_template, url_for
 from flask_compress import Compress
 import os
 import requests
@@ -168,10 +168,12 @@ def health():
 
 @app.route('/')
 def index():
-    """Serve main page"""
     return render_template('index/index.html')
 
-# Error handlers
+@app.route('/offer')
+def offer():
+    return render_template('index/offer.html')
+
 @app.errorhandler(404)
 def not_found(e):
     return jsonify({'error': 'Not found'}), 404
@@ -198,3 +200,5 @@ if __name__ == '__main__':
         port=5001,
         debug=True
     )
+
+

@@ -6,7 +6,9 @@
     <meta name="description" content="INZZO - Эксклюзивный streetwear бренд в японском стиле. Лимитированная коллекция.">
     <meta name="keywords" content="INZZO, streetwear, худи, сакура, японский стиль">
     <title>inzzo</title>
-    
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo_inzzo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -68,48 +70,10 @@
             </div>
             
             <div class="catalog-grid">
-                <!-- Product 1 - Black Hoodie -->
-                <div class="product-card scale-up" data-product="black-hoodie">
-                    <div class="product-card-image">
-                        <img src="/static/img/black_hoodie.JPEG" alt="FALLING SAKURA HOODIE Black">
-                        <span class="product-badge">LIMITED</span>
-                    </div>
-                    <div class="product-card-info">
-                        <h3>FALLING SAKURA HOODIE</h3>
-                        <p class="product-variant">Black Edition</p>
-                        <span class="product-price">6 990 ₽</span>
-                    </div>
-                </div>
 
-                <!-- Product 2 - Red Hoodie -->
-                <div class="product-card scale-up" data-product="red-hoodie">
-                    <div class="product-card-image">
-                        <img src="/static/img/red_hoodie.JPEG" alt="FALLING SAKURA HOODIE Red">
-                        <span class="product-badge">LIMITED</span>
-                    </div>
-                    <div class="product-card-info">
-                        <h3>FALLING SAKURA HOODIE</h3>
-                        <p class="product-variant">Red Edition</p>
-                        <span class="product-price">6 990 ₽</span>
-                    </div>
-                </div>
-
-                <!-- Product 3 - First Blossom -->
-                <div class="product-card scale-up" data-product="first-blossom">
-                    <div class="product-card-image">
-                        <img src="/static/img/first_blossom_1.jpg" alt="FIRST BLOSSOM ZIP-HOODIE">
-                        <span class="product-badge">PRE-ORDER</span>
-                    </div>
-                    <div class="product-card-info">
-                        <h3>FIRST BLOSSOM ZIP-HOODIE</h3>
-                        <span class="product-price">6 990 ₽</span>
-                    </div>
-                </div>
-
-                <!-- Product 4 - Sakura Jeans -->
                 <div class="product-card" data-product="sakura-jeans">
                     <div class="product-card-image">
-                        <img src="/static/img/sakura_jeans1.PNG" alt="SAKURA JEANS">
+                        <img src="/static/img/sakura_jeans1.webp" alt="SAKURA JEANS">
                         <span class="product-badge">PRE-ORDER</span>
                     </div>
                     <div class="product-card-info">
@@ -118,35 +82,68 @@
                     </div>
                 </div>
 
-                <!-- Product 5 - Sakura Zip -->
-                <div class="product-card" data-product="sakura-zip">
+     
+                <div class="product-card product-soon" data-product="black-hoodie">
                     <div class="product-card-image">
-                        <img src="/static/img/sakura_zip_hoodie.PNG" alt="SAKURA ZIP-HOODIE">
-                        <span class="product-badge">PRE-ORDER</span>
+                        <img src="/static/img/black_hoodie.webp" alt="FALLING SAKURA HOODIE Black">
+                        <span class="product-badge badge-soon">SOON</span>
                     </div>
                     <div class="product-card-info">
-                        <h3>SAKURA ZIP-HOODIE</h3>
-                        <span class="product-price">6 990 ₽</span>
+                        <h3>FALLING SAKURA HOODIE</h3>
+                        <p class="product-variant">Black Edition</p>
+                        <span class="product-price">- ₽</span>
                     </div>
                 </div>
 
-                <!-- Product 6 - Tokyo Zip -->
-                <div class="product-card" data-product="tokyo-zip">
+                <div class="product-card product-soon" data-product="red-hoodie">
                     <div class="product-card-image">
-                        <img src="/static/img/pink_zip.PNG" alt="TOKYO ZIP-HOODIE">
-                        <span class="product-badge">PRE-ORDER</span>
+                        <img src="/static/img/red_hoodie.webp" alt="FALLING SAKURA HOODIE Red">
+                        <span class="product-badge badge-soon">SOON</span>
+                    </div>
+                    <div class="product-card-info">
+                        <h3>FALLING SAKURA HOODIE</h3>
+                        <p class="product-variant">Red Edition</p>
+                        <span class="product-price">- ₽</span>
+                    </div>
+                </div>
+
+                <div class="product-card product-soon" data-product="first-blossom">
+                    <div class="product-card-image">
+                        <img src="/static/img/first_blossom_1.webp" alt="FIRST BLOSSOM ZIP-HOODIE">
+                        <span class="product-badge badge-soon">SOON</span>
+                    </div>
+                    <div class="product-card-info">
+                        <h3>FIRST BLOSSOM ZIP-HOODIE</h3>
+                        <span class="product-price">- ₽</span>
+                    </div>
+                </div>
+
+                <div class="product-card product-soon" data-product="sakura-zip">
+                    <div class="product-card-image">
+                        <img src="/static/img/sakura_zip_hoodie.webp" alt="SAKURA ZIP-HOODIE">
+                        <span class="product-badge badge-soon">SOON</span>
+                    </div>
+                    <div class="product-card-info">
+                        <h3>SAKURA ZIP-HOODIE</h3>
+                        <span class="product-price">- ₽</span>
+                    </div>
+                </div>
+
+                <div class="product-card product-soon" data-product="tokyo-zip">
+                    <div class="product-card-image">
+                        <img src="/static/img/pink_zip.webp" alt="TOKYO ZIP-HOODIE">
+                        <span class="product-badge badge-soon">SOON</span>
                     </div>
                     <div class="product-card-info">
                         <h3>TOKYO ZIP-HOODIE</h3>
                         <p class="product-variant">Pink Edition</p>
-                        <span class="product-price">6 990 ₽</span>
+                        <span class="product-price">- ₽</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
@@ -211,6 +208,10 @@
                     <a href="https://t.me/inzzoclo" target="_blank">Telegram</a>
                     <a href="https://instagram.com/inzzoclo" target="_blank">Instagram</a>
                 </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('offer') }}">Оферта</a>
+                    <a href="https://t.me/inzzosupport" target="_blank">Поддержка</a>
+                </div>
                 <p class="footer-copy">© 2026 INZZO</p>
             </div>
         </div>
@@ -226,14 +227,13 @@
         </svg>
     </div>
 
-    <!-- Product Modal -->
     <div class="product-modal" id="productModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close"><span class="modal-close-text">Назад</span></button>
             
             <div class="modal-body">
-                <!-- Gallery -->
+               
                 <div class="modal-gallery">
                     <div class="gallery-main">
                         <img src="" alt="" id="modalMainImage">
@@ -241,7 +241,7 @@
                     <div class="gallery-thumbs" id="modalThumbs"></div>
                 </div>
 
-                <!-- Product Info -->
+                
                 <div class="modal-info">
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <p class="modal-variant" id="modalVariant"></p>
@@ -249,13 +249,13 @@
                     
                     <div class="modal-description" id="modalDescription"></div>
 
-                    <!-- Size Selector -->
+                   
                     <div class="size-selector">
                         <span class="size-label">Размер:</span>
                         <div class="size-options" id="sizeOptions"></div>
                     </div>
 
-                    <!-- Specs -->
+                   
                     <div class="modal-specs">
                         <div class="spec-row">
                             <span class="spec-name">Материал</span>
@@ -267,12 +267,12 @@
                         </div>
                     </div>
 
-                    <!-- Add to cart-btn -->
+                    
                     <button class="add-to-cart-btn" id="addToCartBtn">
                         Добавить в корзину
                     </button>
 
-                    <!-- Delivery Info -->
+                    
                     <div class="modal-delivery">
                         <p>Отправки в течении 2-4 рабочих недель после закрытия предзаказай</p>
                     </div>
@@ -281,7 +281,7 @@
         </div>
     </div>
 
-    <!-- Cart Modal -->
+    
     <div class="cart-modal" id="cartModal">
         <div class="modal-overlay"></div>
         <div class="cart-content">

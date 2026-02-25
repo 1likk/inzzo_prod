@@ -1,9 +1,9 @@
-/* Java */
 const PRODUCTS = {
     'black-hoodie': {
         id: 'black-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Black Edition',
+        status: 'soon',
         price: 6990,
         priceFormatted: '6 990 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры. Уникальный дизайн, вдохновлённый японской эстетикой. Каждая деталь продумана для максимального комфорта и стиля.',
@@ -11,15 +11,16 @@ const PRODUCTS = {
         density: '450 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/black_hoodie.JPEG',
-            '/static/img/black_hoodie3.jpeg',
-            '/static/img/black_hoodie4.jpeg'
+            '/static/img/black_hoodie.webp',
+            '/static/img/black_hoodie3.webp',
+            '/static/img/black_hoodie4.webp'
         ]
     },
     'red-hoodie': {
         id: 'red-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Red Edition',
+        status: 'soon',
         price: 6990,
         priceFormatted: '6 990 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры в яркой красной расцветке. Эксклюзивный дизайн для тех, кто не боится выделяться.',
@@ -27,15 +28,16 @@ const PRODUCTS = {
         density: '450 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/red_hoodie.JPEG',
-            '/static/img/red_hoodie2.jpeg',
-            '/static/img/red_hoodie3.jpeg'
+            '/static/img/red_hoodie.webp',
+            '/static/img/red_hoodie2.webp',
+            '/static/img/red_hoodie3.webp'
         ]
     },
     'first-blossom': {
         id: 'first-blossom',
         name: 'FIRST BLOSSOM ZIP-HOODIE',
         variant: '',
+        status: 'soon',
         price: 6990,
         priceFormatted: '6 990 ₽',
         description: 'Футер 400 гр, 100% хлопок. Свободный и укороченный фит. Спущенная линия плеча. Дизайн выполнен качественной вышивкой.',
@@ -43,8 +45,8 @@ const PRODUCTS = {
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/first_blossom_1.jpg',
-            '/static/img/first_blossom.jpeg'
+            '/static/img/first_blossom_1.webp',
+            '/static/img/first_blossom.webp'
             
         ]
     },
@@ -52,24 +54,25 @@ const PRODUCTS = {
         id: 'sakura-jeans',
         name: 'SAKURA JEANS',
         variant: '',
+        status: 'preorder',
         price: 7500,
         priceFormatted: '7 500 ₽',
-        description: 'Свободный силуэт baggy, унисекс. Плотная варёная джинса 14oz. Фирменная фурнитура INZZO. Уникальная вышивка в японской эстетике.',
-        material: 'Джинса 14oz',
-        density: '',
-        sizes: ['S', 'M', 'L', 'XL'],
+        description: 'Центральный элемент джинс - уникальная вышивка в японской эстетике. Это сложная, детализированная графика, которая превращает каждую пару в произведение искусства. ',
+        material: 'Denim',
+        density: 'Плотная варёная джинса 14oz',
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/sakura_jeans1.PNG',
-            '/static/img/sakura_jeans2.PNG',
-            '/static/img/sakura_jeans_3.jpeg',
-            '/static/img/sakura_jeans_3.jpeg'
-
+            '/static/img/sakura_jeans1.webp',
+            '/static/img/sakura_jeans2.webp',
+            '/static/img/sak_jeans.webp',
+            '/static/img/sakura_jeans_3.webp',
         ]
     },
     'sakura-zip': {
         id: 'sakura-zip',
         name: 'SAKURA ZIP-HOODIE',
         variant: '',
+        status: 'soon',
         price: 6990,
         priceFormatted: '6 990 ₽',
         description: 'Стильная zip-худи с принтом сакуры. Премиум качество и уникальный дизайн.',
@@ -77,13 +80,14 @@ const PRODUCTS = {
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/sakura_zip_hoodie.PNG'
+            '/static/img/sakura_zip_hoodie.webp'
         ]
     },
     'tokyo-zip': {
         id: 'tokyo-zip',
         name: 'TOKYO ZIP-HOODIE',
         variant: 'Pink Edition',
+        status: 'soon',
         price: 6990,
         priceFormatted: '6 990 ₽',
         description: 'Эксклюзивная zip-худи в нежном розовом цвете. Японская эстетика в каждой детали.',
@@ -91,7 +95,7 @@ const PRODUCTS = {
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/pink_zip.PNG'
+            '/static/img/pink_zip.webp'
         ]
     }
 };
@@ -178,7 +182,7 @@ function openProductModal(productId) {
         '<img src="' + img + '" alt="' + product.name + '" class="' + (index === 0 ? 'active' : '') + '" data-image="' + img + '">'
     ).join('');
     
-    // Size options
+
     const sizeOptions = document.getElementById('sizeOptions');
     sizeOptions.innerHTML = product.sizes.map(size => 
         '<button class="size-btn" data-size="' + size + '">' + size + '</button>'
@@ -193,7 +197,7 @@ function openProductModal(productId) {
         });
     });
     
-    // Event listeners for sizes
+    
     sizeOptions.querySelectorAll('.size-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             sizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
@@ -202,9 +206,30 @@ function openProductModal(productId) {
         });
     });
     
-    // Show modal
+
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (product.status === 'soon') {
+        addToCartBtn.textContent = 'СКОРО В ПРОДАЖЕ';
+        addToCartBtn.disabled = true;
+        addToCartBtn.style.background = '#aaa';
+        addToCartBtn.style.cursor = 'not-allowed';
+    } else if (product.status === 'preorder') {
+        addToCartBtn.textContent = 'Предзаказ';
+        addToCartBtn.disabled = false;
+        addToCartBtn.style.background = '';
+        addToCartBtn.style.cursor = '';
+    } else {
+        addToCartBtn.textContent = 'Добавить в корзину';
+        addToCartBtn.disabled = false;
+        addToCartBtn.style.background = '';
+        addToCartBtn.style.cursor = '';
+    }
+
     productModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+
+    initSwipeToClose(productModal, closeProductModal);
 }
 
 function closeProductModal() {
@@ -212,23 +237,39 @@ function closeProductModal() {
     document.body.style.overflow = '';
 }
 
-/* Events */
+
+function initSwipeToClose(modal, closeFn) {
+    let startX = 0;
+    const content = modal.querySelector('.modal-content');
+    if (!content) return;
+
+    content.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    content.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (dx < -60) closeFn();
+    }, { passive: true });
+}
+
+
 function initModalEvents() {
-    // Close buttons
+
     document.querySelectorAll('.modal-close').forEach(btn => {
         btn.addEventListener('click', () => {
             closeAllModals();
         });
     });
     
-    // Overlay clicks
+   
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', () => {
             closeAllModals();
         });
     });
     
-    // Add to cart button
+
     const addToCartBtn = document.getElementById('addToCartBtn');
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', () => {
@@ -246,7 +287,7 @@ function initModalEvents() {
         });
     }
     
-    // Escape key
+   
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeAllModals();
@@ -261,7 +302,7 @@ function closeAllModals() {
     document.body.style.overflow = '';
 }
 
-/* Cart function */
+
 function initCartEvents() {
     if (floatingCart) {
         floatingCart.addEventListener('click', () => {
@@ -471,7 +512,7 @@ function initOrderForm() {
         }
     });
 }
-/* Storage */
+
 function saveCartToStorage() {
     localStorage.setItem('inzzo_cart', JSON.stringify(cart));
 }

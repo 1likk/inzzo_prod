@@ -1,5 +1,3 @@
-
-
 /* CSS Variables */
 :root {
     --color-bg: #faf9f7;
@@ -10,15 +8,14 @@
     --color-accent-dark: #b71c1c;
     --color-white: #fff;
     --color-black: #0a0a0a;
-    
+
     --font-main: 'Montserrat', sans-serif;
     --font-jp: 'Noto Sans JP', sans-serif;
-    
+
     --transition: all 0.3s ease;
     --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
     --shadow-medium: 0 8px 40px rgba(0,0,0,0.12);
 }
-
 
 *, *::before, *::after {
     margin: 0;
@@ -59,7 +56,7 @@ img {
     display: none !important;
 }
 
-
+/* Loading Screen */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -117,30 +114,25 @@ img {
     to { width: 100%; }
 }
 
-
-
+/* Header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 40px;
-    align-items: center;
-    z-index: 100;
-    background: transparent;
-    transition: var(--transition);
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: #ffffff; 
-    border-bottom: 1px solid rgba(0,0,0,0.05); 
-    background: rgba(255, 255, 255, 0.9); 
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
 }
 
 .header.scrolled {
     background: rgba(250, 249, 247, 0.95);
-    backdrop-filter: blur(10px);
     box-shadow: var(--shadow-soft);
 }
 
@@ -183,9 +175,7 @@ img {
     width: 100%;
 }
 
-
-
-
+/* Vertical Text */
 .vertical-text {
     position: fixed;
     writing-mode: vertical-rl;
@@ -203,7 +193,7 @@ img {
     transform: translateY(-50%);
 }
 
-/* HERO */
+/* Hero */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -284,7 +274,7 @@ img {
     box-shadow: 0 10px 30px rgba(214, 48, 49, 0.3);
 }
 
-
+/* Section Header */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -296,6 +286,7 @@ img {
     margin-bottom: 24px;
     display: flex;
     align-items: baseline;
+    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
 }
@@ -307,21 +298,14 @@ img {
     color: var(--color-accent);
 }
 
-/* ========================================
-   CATALOG SECTION
-   ======================================== */
+/* Catalog */
 .catalog {
     padding: 80px 0 100px;
     background: var(--color-bg);
 }
 
 .catalog .section-header {
-    text-align: center;
     margin-bottom: 50px;
-}
-
-.section-title {
-    justify-content: center;
 }
 
 .catalog-grid {
@@ -363,16 +347,6 @@ img {
     transform: scale(1.05);
 }
 
-/* Карточки с увеличенным */
-.product-card.scale-up .product-card-image img {
-    object-fit: cover;
-    transform: scale(1.1);
-}
-
-.product-card.scale-up:hover .product-card-image img {
-    transform: scale(1.2);
-}
-
 .product-badge {
     position: absolute;
     top: 12px;
@@ -385,6 +359,24 @@ img {
     letter-spacing: 0.05em;
     border-radius: 2px;
     z-index: 2;
+}
+
+.badge-soon {
+    background: #888;
+}
+
+.product-soon {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.product-soon:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.product-soon .product-card-image img {
+    filter: grayscale(30%);
 }
 
 .product-card-info {
@@ -408,7 +400,7 @@ img {
     font-weight: 700;
 }
 
-/* Секции */
+/* About */
 .about {
     padding: 120px 0;
     background: var(--color-white);
@@ -419,10 +411,6 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-}
-
-.about-image {
-    position: relative;
 }
 
 .about-image img {
@@ -516,7 +504,7 @@ img {
     color: rgba(255,255,255,0.5);
 }
 
-/* Cart */
+/* Floating Cart */
 .floating-cart {
     position: fixed;
     bottom: 30px;
@@ -561,7 +549,7 @@ img {
     justify-content: center;
 }
 
-/* Modal */
+/* Modals — base */
 .product-modal,
 .cart-modal,
 .checkout-modal {
@@ -608,7 +596,18 @@ img {
     color: var(--color-text);
 }
 
-/* Modal */
+/* На десктопе скрываем текст "Назад", показываем × через ::after */
+.modal-close-text {
+    display: none;
+}
+
+.product-modal .modal-close::after {
+    content: '×';
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* Product Modal */
 .modal-content {
     position: relative;
     background: var(--color-white);
@@ -632,7 +631,6 @@ img {
     padding: 40px;
 }
 
-/* Modal Gallery */
 .modal-gallery {
     position: sticky;
     top: 0;
@@ -673,7 +671,6 @@ img {
     opacity: 1;
     border-color: var(--color-text);
 }
-
 
 .modal-info {
     padding: 20px 0;
@@ -731,8 +728,6 @@ img {
     cursor: pointer;
     transition: var(--transition);
     border-radius: 4px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     color: #000000;
     outline: none;
@@ -774,7 +769,7 @@ img {
     font-weight: 600;
 }
 
-/* Add to Cart-btn */
+/* Add to Cart Button */
 .add-to-cart-btn {
     width: 100%;
     padding: 18px;
@@ -803,7 +798,7 @@ img {
     margin-bottom: 6px;
 }
 
-/* cart-modal */
+/* Cart Modal */
 .cart-content {
     position: fixed;
     right: 0;
@@ -944,12 +939,14 @@ img {
     background: var(--color-accent);
 }
 
-/* Checkout */
+/* Checkout Modal */
 .checkout-content {
     position: relative;
     background: var(--color-white);
     width: 90%;
     max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
     padding: 40px;
     border-radius: 12px;
     transform: translateY(20px);
@@ -973,10 +970,6 @@ img {
 }
 
 /* Order Form */
-.order-form {
-    background: var(--color-white);
-}
-
 .form-group {
     margin-bottom: 24px;
     text-align: left;
@@ -1089,6 +1082,7 @@ img {
     color: #388e3c;
 }
 
+/* FAQ */
 .faq {
     max-width: 600px;
     margin: 50px auto;
@@ -1116,79 +1110,82 @@ img {
     display: flex;
     justify-content: space-between;
     font-family: inherit;
-    color: #000000; 
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
+    color: #000000;
     appearance: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0s ease-out;
+    transition: max-height 0.3s ease-out;
     color: #666;
     line-height: 1.6;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; 
+    max-height: 200px;
     padding-bottom: 20px;
 }
 
 .faq-item.active span {
-    transform: rotate(45deg); 
+    transform: rotate(45deg);
 }
 
-/* Responsive */
+/* Оферта */
+.of {
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 100px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
 @media (max-width: 1024px) {
     .container {
         padding: 0 24px;
     }
-    
+
     .header {
         padding: 16px 24px;
-        background: #ffffff; 
-        border-bottom: 1px solid rgba(0,0,0,0.05); 
-        background: rgba(255, 255, 255, 0.9); 
-        backdrop-filter: blur(10px);
-        
     }
-    
+
     .nav {
         gap: 24px;
     }
-    
+
     .vertical-text {
         display: none;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 0 24px;
     }
-    
+
     .hero-image-wrapper {
         order: -1;
     }
-    
+
     .hero-illustration {
         max-width: 400px;
         margin: 0 auto;
     }
-    
+
     .hero-text {
         max-width: 100%;
     }
-    
+
     .hero-description {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -1199,156 +1196,209 @@ img {
     .header {
         flex-direction: column;
         gap: 16px;
-        justify-content: space-between; 
         padding: 15px 20px;
-        background: #ffffff; 
-        border-bottom: 1px solid rgba(0,0,0,0.05); 
-        background: rgba(255, 255, 255, 0.9); 
-        backdrop-filter: blur(10px);
     }
-    
+
     .nav {
-        position: static; 
+        position: static;
         transform: none;
         left: auto;
         gap: 15px;
     }
-    
+
     .nav-link {
         font-size: 10px;
     }
-    
+
     .hero {
         padding: 140px 0 60px;
     }
-    
+
     .title-line {
         font-size: clamp(2.5rem, 12vw, 4rem);
     }
-    
+
     .about-stats {
         flex-direction: column;
         gap: 24px;
     }
-    
-    .modal-body {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    
-    .modal-content {
+
+    /* Product Modal — мобильный вид */
+    .product-modal .modal-content {
         width: 100%;
         max-width: none;
         height: 100%;
         max-height: none;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
-    
+
+    .product-modal .modal-body {
+        grid-template-columns: 1fr;
+        padding: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .product-modal .modal-gallery {
+        position: static;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-modal .gallery-main {
+        margin-bottom: 0;
+        border-radius: 0;
+        flex-shrink: 0;
+    }
+
+    .product-modal .gallery-main img {
+        aspect-ratio: 4/5;
+        max-height: 42vh;
+        object-fit: contain;
+    }
+
+    .product-modal .gallery-thumbs {
+        position: static;
+        padding: 8px 12px;
+        background: white;
+        gap: 6px;
+    }
+
+    .product-modal .modal-info {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px 20px 24px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-modal .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 2px;
+    }
+
+    .product-modal .modal-price {
+        font-size: 1.4rem;
+        margin-bottom: 14px;
+    }
+
+    .product-modal .modal-description {
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+    }
+
+    .product-modal .size-selector {
+        margin-bottom: 14px;
+    }
+
+    .product-modal .modal-specs {
+        margin-bottom: 14px;
+        padding: 12px;
+    }
+
+    .product-modal .add-to-cart-btn {
+        margin-bottom: 10px;
+        padding: 14px;
+    }
+
+    /* Кнопка ← Назад вместо × */
+    .product-modal .modal-close {
+        position: static;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 1rem;
+        color: var(--color-text);
+        padding: 14px 16px;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: left;
+        height: auto;
+    }
+
+    .product-modal .modal-close::before {
+        content: '←';
+        font-size: 1.2rem;
+    }
+
+    .product-modal .modal-close::after {
+        display: none;
+    }
+
+    .product-modal .modal-close-text {
+        display: inline;
+    }
+
+    /* Checkout Modal на мобильном */
+    .checkout-content {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        padding: 24px;
+    }
+
+    /* Catalog */
     .catalog-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
-    
+
     .product-card-info {
         padding: 12px;
     }
-    
+
     .product-card-info h3 {
         font-size: 0.75rem;
     }
 
-   .gallery-thumbs {
-        position: sticky;
-        bottom: 0; 
-        z-index: 10;
-        background: white; 
-        padding: 10px 0;
-    }
-    
     .floating-cart {
         bottom: 20px;
         right: 20px;
         width: 54px;
         height: 54px;
     }
-    
-    .checkout-content {
-        width: 100%;
-        height: 100%;
-        max-width: none;
-        border-radius: 0;
-        padding: 24px;
-        overflow-y: auto;
-    }
 
     .form-group {
-        margin-bottom: 16px; 
+        margin-bottom: 16px;
     }
 
     .form-group label {
-        margin-bottom: 4px; 
+        margin-bottom: 4px;
     }
 
     .form-group input {
-        padding: 12px 16px; 
+        padding: 12px 16px;
     }
 
+    .of {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 @media (max-width: 480px) {
-    
-    .header {
-        flex-direction: column;
-        gap: 16px;
-        justify-content: space-between; 
-        padding: 15px 20px;
-        background: #ffffff; 
-        border-bottom: 1px solid rgba(0,0,0,0.05); 
-        background: rgba(255, 255, 255, 0.9); 
-        backdrop-filter: blur(10px);
-    }
-    
     .loading-logo {
         font-size: 2.5rem;
     }
-    
+
     .nav {
         gap: 12px;
     }
 
-    .nav-link {
-        font-size: 10px;
-    }
-    
     .hero-btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-
-    .checkout-content {
-        width: 100%;
-        height: 100%;
-        max-width: none;
-        border-radius: 0;
-        padding: 24px;
-        overflow-y: auto;
-    }
-
-
-    .form-group {
-        margin-bottom: 16px; 
-    }
-
-    .form-group label {
-        margin-bottom: 4px; 
-    }
-
-    .form-group input {
-        padding: 12px 16px; 
-    }
-
 }
