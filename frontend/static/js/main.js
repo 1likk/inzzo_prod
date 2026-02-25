@@ -65,7 +65,7 @@ const PRODUCTS = {
             '/static/img/sakura_jeans1.webp',
             '/static/img/sakura_jeans2.webp',
             '/static/img/sak_jeans.webp',
-            '/static/img/2026-02-25 17.52.22.webp',
+            '/static/img/sakk_jeans.webp',
         ]
     },
     'sakura-zip': {
