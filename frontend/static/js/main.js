@@ -443,7 +443,50 @@ function closeCheckoutModal() {
 function initOrderForm() {
     const form = document.getElementById('orderForm');
     if (!form) return;
-    
+
+    const phoneInput = form.querySelector('#phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('focus', () => {
+            if (!phoneInput.value) phoneInput.value = '+';
+        });
+
+        phoneInput.addEventListener('input', (e) => {
+            let val = e.target.value;
+            const hasPlus = val.startsWith('+');
+            val = val.replace(/[^\d\s\-()]/g, '');
+            if (hasPlus) val = '+' + val;
+            e.target.value = val;
+        });
+
+        phoneInput.addEventListener('keydown', (e) => {
+            if ((e.key === 'Backspace' || e.key === 'Delete') && phoneInput.value === '+') {
+                e.preventDefault();
+            }
+        });
+
+        phoneInput.addEventListener('blur', () => {
+            if (phoneInput.value === '+') phoneInput.value = '';
+        });
+    }
+
+    // Авто-префикс @ для Telegram
+    const tgInput = form.querySelector('#telegram');
+    if (tgInput) {
+        tgInput.addEventListener('focus', () => {
+            if (!tgInput.value) tgInput.value = '@';
+        });
+
+        tgInput.addEventListener('input', () => {
+            if (!tgInput.value.startsWith('@')) {
+                tgInput.value = '@' + tgInput.value.replace(/^@+/, '');
+            }
+        });
+
+        tgInput.addEventListener('blur', () => {
+            if (tgInput.value === '@') tgInput.value = '';
+        });
+    }
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         

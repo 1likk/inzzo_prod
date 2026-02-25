@@ -1082,7 +1082,7 @@ img {
     color: #388e3c;
 }
 
-/* FAQ */
+
 .faq {
     max-width: 600px;
     margin: 50px auto;
@@ -1139,10 +1139,6 @@ img {
     padding-right: 10%;
     margin-top: 100px;
 }
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
 
 @media (max-width: 1024px) {
     .container {
