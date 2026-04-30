@@ -3,34 +3,34 @@ const PRODUCTS = {
         id: 'black-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Black Edition',
-        status: 'soon',
-        price: 6990,
-        priceFormatted: '6 990 ₽',
+        status: 'preorder',
+        price: 6490,
+        priceFormatted: '6 490 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры. Уникальный дизайн, вдохновлённый японской эстетикой. Каждая деталь продумана для максимального комфорта и стиля.',
         material: '100% хлопок',
-        density: '450 г/м²',
+        density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/black_hoodie.webp',
             '/static/img/black_hoodie3.webp',
-            '/static/img/black_hoodie4.webp'
+            '/static/img/IMG_5154.webp'
         ]
     },
     'red-hoodie': {
         id: 'red-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Red Edition',
-        status: 'soon',
-        price: 6990,
-        priceFormatted: '6 990 ₽',
+        status: 'preorder',
+        price: 6490,
+        priceFormatted: '6 490 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры в яркой красной расцветке. Эксклюзивный дизайн для тех, кто не боится выделяться.',
         material: '100% хлопок',
-        density: '450 г/м²',
+        density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/red_hoodie.webp',
             '/static/img/red_hoodie2.webp',
-            '/static/img/red_hoodie3.webp'
+            '/static/img/IMG_5154.webp'
         ]
     },
     'first-blossom': {
@@ -38,7 +38,7 @@ const PRODUCTS = {
         name: 'FIRST BLOSSOM ZIP-HOODIE',
         variant: '',
         status: 'soon',
-        price: 6990,
+        price: 6490,
         priceFormatted: '6 990 ₽',
         description: 'Футер 400 гр, 100% хлопок. Свободный и укороченный фит. Спущенная линия плеча. Дизайн выполнен качественной вышивкой.',
         material: '100% хлопок',
@@ -54,7 +54,7 @@ const PRODUCTS = {
         id: 'sakura-jeans',
         name: 'SAKURA JEANS',
         variant: '',
-        status: 'preorder',
+        status: 'soon',
         price: 7500,
         priceFormatted: '7 500 ₽',
         description: 'Центральный элемент джинс - уникальная вышивка в японской эстетике. Это сложная, детализированная графика, которая превращает каждую пару в произведение искусства. ',
