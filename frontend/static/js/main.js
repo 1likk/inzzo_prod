@@ -1,9 +1,61 @@
 const PRODUCTS = {
+    'black-t-shirt': {
+        id: 'black-t-shirt',
+        name: 'Sorry, I love Japan',
+        variant: 'Black Edition',
+        status: 'preorder',
+        price: 3290,
+        priceFormatted: '3 290 ₽',
+        description: '«Sorry, I love Japan» с черными рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
+        material: '100% хлопок',
+        density: '210 г/м²',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            '/static/img/black_t_shirt0.webp',
+            '/static/img/black_t_shirt1.webp',
+            '/static/img/t-shirt-orientir.webp'
+        ]
+    },
+    'pink-t-shirt': {
+        id: 'pink-t-shirt',
+        name: 'Sorry, I love Japan',
+        variant: 'Pink Edition',
+        status: 'preorder',
+        price: 3290,
+        priceFormatted: '3 290 ₽',
+        description: '«Sorry, I love Japan» с розовыми рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
+        material: '100% хлопок',
+        density: '210 г/м²',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            '/static/img/pink_t_shirt0.webp',
+            '/static/img/pink_t_shirt1.webp',
+            '/static/img/t-shirt-orientir.webp'
+        ]
+    },
+    'white-t-shirt': {
+        id: 'white-t-shirt',
+        name: 'Sorry, I love Japan',
+        variant: 'White Edition',
+        status: 'preorder',
+        price: 2290,
+        priceFormatted: '2 290 ₽',
+        description: '«Sorry, I love Japan». На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
+        material: '100% хлопок',
+        density: '210 г/м²',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            '/static/img/white_t_shirt0.webp',
+            '/static/img/white_t_shirt1.webp',
+            '/static/img/t-shirt-orientir.webp'
+        ]
+    },
+
     'black-hoodie': {
         id: 'black-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Black Edition',
-        status: 'preorder',
+        status: 'sold-out',
         price: 6490,
         priceFormatted: '6 490 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры. Уникальный дизайн, вдохновлённый японской эстетикой. Каждая деталь продумана для максимального комфорта и стиля.',
@@ -20,7 +72,7 @@ const PRODUCTS = {
         id: 'red-hoodie',
         name: 'FALLING SAKURA HOODIE',
         variant: 'Red Edition',
-        status: 'preorder',
+        status: 'sold-out',
         price: 6490,
         priceFormatted: '6 490 ₽',
         description: 'Премиум худи с авторской вышивкой сакуры в яркой красной расцветке. Эксклюзивный дизайн для тех, кто не боится выделяться.',
@@ -39,14 +91,15 @@ const PRODUCTS = {
         variant: '',
         status: 'soon',
         price: 6490,
-        priceFormatted: '6 990 ₽',
+        priceFormatted: '- ₽',
         description: 'Футер 400 гр, 100% хлопок. Свободный и укороченный фит. Спущенная линия плеча. Дизайн выполнен качественной вышивкой.',
         material: '100% хлопок',
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/first_blossom_1.webp',
-            '/static/img/first_blossom.webp'
+            '/static/img/first_blossom.webp',
+            '/static/img/IMG_5154.webp'
             
         ]
     },
@@ -54,7 +107,7 @@ const PRODUCTS = {
         id: 'sakura-jeans',
         name: 'SAKURA JEANS',
         variant: '',
-        status: 'soon',
+        status: 'sold-out',
         price: 7500,
         priceFormatted: '7 500 ₽',
         description: 'Центральный элемент джинс - уникальная вышивка в японской эстетике. Это сложная, детализированная графика, которая превращает каждую пару в произведение искусства. ',
@@ -64,7 +117,6 @@ const PRODUCTS = {
         images: [
             '/static/img/sakura_jeans1.webp',
             '/static/img/sakura_jeans2.webp',
-            '/static/img/sak_jeans.webp',
             '/static/img/sakk_jeans.webp',
         ]
     },
@@ -74,13 +126,14 @@ const PRODUCTS = {
         variant: '',
         status: 'soon',
         price: 6990,
-        priceFormatted: '6 990 ₽',
+        priceFormatted: '- ₽',
         description: 'Стильная zip-худи с принтом сакуры. Премиум качество и уникальный дизайн.',
         material: '100% хлопок',
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/sakura_zip_hoodie.webp'
+            '/static/img/sakura_zip_hoodie.webp',
+            '/static/img/IMG_5154.webp'
         ]
     },
     'tokyo-zip': {
@@ -89,13 +142,14 @@ const PRODUCTS = {
         variant: 'Pink Edition',
         status: 'soon',
         price: 6990,
-        priceFormatted: '6 990 ₽',
+        priceFormatted: '- ₽',
         description: 'Эксклюзивная zip-худи в нежном розовом цвете. Японская эстетика в каждой детали.',
         material: '100% хлопок',
         density: '400 г/м²',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
-            '/static/img/pink_zip.webp'
+            '/static/img/pink_zip.webp',
+            '/static/img/IMG_5154.webp'
         ]
     }
 };
@@ -214,10 +268,15 @@ function openProductModal(productId) {
         addToCartBtn.style.background = '#aaa';
         addToCartBtn.style.cursor = 'not-allowed';
     } else if (product.status === 'preorder') {
-        addToCartBtn.textContent = 'Предзаказ';
+        addToCartBtn.textContent = 'ПРЕДЗАКАЗ';
         addToCartBtn.disabled = false;
-        addToCartBtn.style.background = '';
+        addToCartBtn.style.background = '#d53132';
         addToCartBtn.style.cursor = '';
+    } else if (product.status === 'sold-out') {
+        addToCartBtn.textContent = 'РАСПРОДАНО';
+        addToCartBtn.disabled = true;
+        addToCartBtn.style.background = '#aaa';
+        addToCartBtn.style.cursor = 'not-allowed';
     } else {
         addToCartBtn.textContent = 'Добавить в корзину';
         addToCartBtn.disabled = false;

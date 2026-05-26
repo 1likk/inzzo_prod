@@ -361,21 +361,33 @@ img {
     z-index: 2;
 }
 
+.badge-pre-order {
+    background: #d53132;
+}
+
 .badge-soon {
     background: #888;
 }
 
-.product-soon {
+.badge-sold-out {
+    background: #555;
+}
+
+.product-soon,
+.product-sold-out {
     opacity: 0.6;
     cursor: default;
 }
 
-.product-soon:hover {
+.product-soon:hover,
+.product-sold-out:hover {
     transform: none;
     box-shadow: none;
 }
 
-.product-soon .product-card-image img {
+
+.product-soon .product-card-image img,
+.product-sold-out .product-card-image img {
     filter: grayscale(30%);
 }
 
