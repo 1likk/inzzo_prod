@@ -46,8 +46,8 @@ const PRODUCTS = {
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/white_t_shirt0.webp',
-            '/static/img/white_t_shirt1.webp',
-            '/static/img/t-shirt-orientir.webp'
+            '/static/img/IMG_8899.webp',
+            '/static/img/t-shirt-orientir.webp',
         ]
     },
 
