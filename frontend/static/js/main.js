@@ -7,7 +7,7 @@ const PRODUCTS = {
         price: 4490,
         priceFormatted: '4 490 ₽',
         description: 'Почувствуйте настоящую изысканность в каждой детали с нашим новым белым лонгсливом. Это изделие, сочетающее в себе классический комфорт и уникальный дизайн, станет настоящей жемчужиной вашего гардероба.',
-        material: 'Вафельная ткань, 100% хлопок. Дизайн выполнен из премиум вышивки',
+        material: 'Вафельная ткань, 100% хлопок.',
         density: '250 г/м²',
         delivery: 'Отправки в течении 2-3 недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
@@ -37,6 +37,26 @@ const PRODUCTS = {
             '/static/img/t-shirt-orientir.webp'
         ]
     },
+
+    'dark-blue-t-shirt': {
+        id: 'blue-t-shirt',
+        name: 'Sorry, I love Japan',
+        variant: 'Blue Edition',
+        status: 'preorder',
+        price: 3290,
+        priceFormatted: '3 290 ₽',
+        description: '«Sorry, I love Japan» с синими рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
+        material: '100% хлопок',
+        density: '210 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            '/static/img/dark1.webp',
+            '/static/img/dark2.webp',
+            '/static/img/t-shirt-orientir.webp'
+        ]
+    },
+
 
     'black-t-shirt': {
         id: 'black-t-shirt',
