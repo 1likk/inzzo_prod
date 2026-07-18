@@ -1,21 +1,40 @@
 const PRODUCTS = {
     'white-longsleeve': {
         id: 'white-longsleeve',
-        name: 'Henley-longsleeve',
+        name: 'Hanami longsleeve',
         variant: 'White Edition',
         status: 'preorder',
         price: 4490,
         priceFormatted: '4 490 ₽',
         description: 'Почувствуйте настоящую изысканность в каждой детали с нашим новым белым лонгсливом. Это изделие, сочетающее в себе классический комфорт и уникальный дизайн, станет настоящей жемчужиной вашего гардероба.',
-        material: 'Вафельная ткань, 100% хлопок',
+        material: 'Вафельная ткань, 100% хлопок. Дизайн выполнен из премиум вышивки',
         density: '250 г/м²',
         delivery: 'Отправки в течении 2-3 недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'static/img/long1.webp',
             'static/img/long2.webp',
-            'static/img/long3.webp',
+            'static/img/longg3.webp',
             'static/img/long4.webp',
+        ]
+    },
+
+    'blue-t-shirt': {
+        id: 'blue-t-shirt',
+        name: 'Sorry, I love Japan',
+        variant: 'Blue Edition',
+        status: 'preorder',
+        price: 3290,
+        priceFormatted: '3 290 ₽',
+        description: '«Sorry, I love Japan» с синими рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
+        material: '100% хлопок',
+        density: '210 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            '/static/img/blue0.webp',
+            '/static/img/blue1.webp',
+            '/static/img/t-shirt-orientir.webp'
         ]
     },
 
