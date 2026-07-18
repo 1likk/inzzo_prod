@@ -1,4 +1,24 @@
 const PRODUCTS = {
+    'white-longsleeve': {
+        id: 'white-longsleeve',
+        name: 'Henley-longsleeve',
+        variant: 'White Edition',
+        status: 'preorder',
+        price: 4490,
+        priceFormatted: '4 490 ₽',
+        description: 'Почувствуйте настоящую изысканность в каждой детали с нашим новым белым лонгсливом. Это изделие, сочетающее в себе классический комфорт и уникальный дизайн, станет настоящей жемчужиной вашего гардероба.',
+        material: 'Вафельная ткань, 100% хлопок',
+        density: '250 г/м²',
+        delivery: 'Отправки в течении 2-3 недель после закрытия предзаказа',
+        sizes: ['S', 'M', 'L', 'XL'],
+        images: [
+            'static/img/long1.webp',
+            'static/img/long2.webp',
+            'static/img/long3.webp',
+            'static/img/long4.webp',
+        ]
+    },
+
     'black-t-shirt': {
         id: 'black-t-shirt',
         name: 'Sorry, I love Japan',
@@ -9,6 +29,7 @@ const PRODUCTS = {
         description: '«Sorry, I love Japan» с черными рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
         material: '100% хлопок',
         density: '210 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/black_t_shirt0.webp',
@@ -26,6 +47,7 @@ const PRODUCTS = {
         description: '«Sorry, I love Japan» с розовыми рукавами реглан. На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
         material: '100% хлопок',
         density: '210 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/pink_t_shirt0.webp',
@@ -43,6 +65,7 @@ const PRODUCTS = {
         description: '«Sorry, I love Japan». На груди - минималистичный винтажный японский флаг, на спине - объёмный номер из цветущей сакуры. Твоя новая любимая вещь на лето.',
         material: '100% хлопок',
         density: '210 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/white_t_shirt0.webp',
@@ -61,6 +84,7 @@ const PRODUCTS = {
         description: 'Премиум худи с авторской вышивкой сакуры. Уникальный дизайн, вдохновлённый японской эстетикой. Каждая деталь продумана для максимального комфорта и стиля.',
         material: '100% хлопок',
         density: '400 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/black_hoodie.webp',
@@ -78,6 +102,7 @@ const PRODUCTS = {
         description: 'Премиум худи с авторской вышивкой сакуры в яркой красной расцветке. Эксклюзивный дизайн для тех, кто не боится выделяться.',
         material: '100% хлопок',
         density: '400 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/red_hoodie.webp',
@@ -95,6 +120,7 @@ const PRODUCTS = {
         description: 'Футер 400 гр, 100% хлопок. Свободный и укороченный фит. Спущенная линия плеча. Дизайн выполнен качественной вышивкой.',
         material: '100% хлопок',
         density: '400 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/first_blossom_1.webp',
@@ -113,6 +139,7 @@ const PRODUCTS = {
         description: 'Центральный элемент джинс - уникальная вышивка в японской эстетике. Это сложная, детализированная графика, которая превращает каждую пару в произведение искусства. ',
         material: 'Denim',
         density: 'Плотная варёная джинса 14oz',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
         images: [
             '/static/img/sakura_jeans1.webp',
@@ -130,6 +157,7 @@ const PRODUCTS = {
         description: 'Стильная zip-худи с принтом сакуры. Премиум качество и уникальный дизайн.',
         material: '100% хлопок',
         density: '400 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/sakura_zip_hoodie.webp',
@@ -146,6 +174,7 @@ const PRODUCTS = {
         description: 'Эксклюзивная zip-худи в нежном розовом цвете. Японская эстетика в каждой детали.',
         material: '100% хлопок',
         density: '400 г/м²',
+        delivery: 'Отправки в течении 1-2 рабочих недель после закрытия предзаказа',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             '/static/img/pink_zip.webp',
@@ -159,8 +188,32 @@ let cart = [];
 let selectedSize = null;
 let currentProduct = null;
 
+// Mobile detection
+const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
+const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+};
+
 // DOM Elements
 let productModal, cartModal, checkoutModal, floatingCart;
+
+// Debounce helper for performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,6 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
     cartModal = document.getElementById('cartModal');
     checkoutModal = document.getElementById('checkoutModal');
     floatingCart = document.getElementById('floatingCart');
+    
+    // Detect device capabilities
+    const isTouch = isTouchDevice();
+    const isMobileDevice = isMobile();
+    
+    // Apply mobile optimizations
+    if (isTouch) {
+        document.body.classList.add('touch-device');
+    }
+    if (isMobileDevice) {
+        document.body.classList.add('mobile-device');
+        // Disable some heavy animations on mobile
+        document.documentElement.style.setProperty('--transition', 'all 0.15s ease');
+    }
     
     initLoadingScreen();
     initHeaderScroll();
@@ -193,13 +260,15 @@ function initHeaderScroll() {
     const header = document.querySelector('.header');
     if (!header) return;
     
-    window.addEventListener('scroll', () => {
+    const handleScroll = debounce(() => {
         if (window.pageYOffset > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-    });
+    }, 10);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 /* Products */
@@ -230,6 +299,12 @@ function openProductModal(productId) {
     document.getElementById('modalDescription').textContent = product.description;
     document.getElementById('specMaterial').textContent = product.material;
     document.getElementById('specDensity').textContent = product.density;
+    
+    // Update delivery information
+    const deliveryElement = document.querySelector('.modal-delivery p');
+    if (deliveryElement && product.delivery) {
+        deliveryElement.textContent = product.delivery;
+    }
    
     const thumbsContainer = document.getElementById('modalThumbs');
     thumbsContainer.innerHTML = product.images.map((img, index) => 
